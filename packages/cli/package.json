@@ -1,0 +1,41 @@
+{
+  "name": "codeowners-manager",
+  "version": "0.0.1",
+  "description": "A CLI to manage CODEOWNERS file",
+  "keywords": [
+    "codeowners",
+    "github",
+    "git"
+  ],
+  "author": "Raul Melo",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./cli": {
+      "import": "./dist/cli.js",
+      "require": "./dist/cli.cjs",
+      "types": "./dist/cli.d.ts"
+    },
+    "./config": {
+      "import": "./dist/config.js",
+      "require": "./dist/config.cjs",
+      "types": "./dist/config.d.ts"
+    }
+  },
+  "scripts": {
+    "prepare": "pnpm turbo build --filter codeowners-manager --output-logs errors-only",
+    "build": "vite build",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "cosmiconfig": "8.2.0",
+    "zod": "3.21.4"
+  },
+  "devDependencies": {
+    "@types/node": "16",
+    "tsx": "3.12.7",
+    "typescript": "5.1.6",
+    "vite": "4.4.8",
+    "vite-plugin-dts": "3.5.1"
+  }
+}
