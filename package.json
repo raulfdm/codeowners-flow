@@ -10,15 +10,17 @@
   "author": "Raul Melo",
   "license": "MIT",
   "type": "module",
-  "bin": "dist/codeowners-manager.js",
+  "bin": "dist/cli.js",
   "exports": {
-    ".": {
-      "import": "./index.js",
-      "require": "./index.cjs"
+    "./cli": {
+      "import": "./dist/cli.js",
+      "require": "./dist/cli.cjs",
+      "types": "./dist/cli.d.ts"
     },
     "./config": {
-      "import": "./config.js",
-      "types": "./dist/src/config.d.ts"
+      "import": "./dist/config.js",
+      "require": "./dist/config.cjs",
+      "types": "./dist/config.d.ts"
     }
   },
   "scripts": {
