@@ -8,4 +8,7 @@
     "strict": true,
     "skipDefaultLibCheck": true
   },
+  "include": [
+    "src/"
+  ],
 }
