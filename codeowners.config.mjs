@@ -1,6 +1,6 @@
 const mainTeams = ["@company/core-team", "@company/infra-team"];
 
-/** @type {import('./dist/src/config.d.ts').UserConfig} */
+/** @type {import('codeowners-manager/dist/config').UserConfig} */
 export default {
   outDir: ".github",
   rules: [
