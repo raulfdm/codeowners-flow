@@ -18,9 +18,15 @@
     }
   },
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "cosmiconfig": "8.2.0",
+    "zod": "3.21.4"
   },
   "devDependencies": {
+    "tsx": "3.12.7",
     "typescript": "5.1.6",
     "vite": "4.4.8"
   }
