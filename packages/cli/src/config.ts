@@ -1,15 +1,35 @@
 import { z } from "zod";
 
-const OwnersSchema = z.object({
+const OwnerSchema = z.object({
+  name: z.string(),
+});
+
+type Owner = z.infer<typeof OwnerSchema>;
+
+export function defineOwner(owner: Owner) {
+  return owner;
+}
+
+const RuleSchema = z.object({
   pattern: z.string(),
   excludePatterns: z.array(z.string()).optional(),
-  owners: z.array(z.string()),
+  owners: z.array(OwnerSchema),
   comments: z.array(z.string()).optional(),
 });
 
-export const UserConfigSchema = z.object({
+type Rule = z.infer<typeof RuleSchema>;
+
+export function defineRule(rule: Rule) {
+  return rule;
+}
+
+const UserConfigSchema = z.object({
   outDir: z.string(),
-  rules: z.array(OwnersSchema.required()),
+  rules: z.array(RuleSchema.required()),
 });
 
-export type UserConfig = z.infer<typeof UserConfigSchema>;
+type UserConfig = z.infer<typeof UserConfigSchema>;
+
+export function defineConfig(config: UserConfig) {
+  return config;
+}

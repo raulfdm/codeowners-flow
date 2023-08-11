@@ -10,6 +10,13 @@
   "author": "Raul Melo",
   "license": "MIT",
   "type": "module",
+  "types": "./index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "index.d.ts",
+    "config.d.ts"
+  ],
   "exports": {
     "./cli": {
       "import": "./dist/cli.js",
@@ -25,7 +32,7 @@
   "scripts": {
     "prepare": "pnpm turbo build --filter codeowners-manager --output-logs errors-only",
     "build": "vite build",
-    "dev": "tsx src/index.ts"
+    "dev": "tsx src/cli.ts"
   },
   "dependencies": {
     "cosmiconfig": "8.2.0",
