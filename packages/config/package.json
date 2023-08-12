@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@codeowners-js/eslint": "workspace:*",
+    "@codeowners-js/tsconfig": "workspace:*",
     "@types/node": "16",
     "eslint": "8.47.0",
     "tsx": "3.12.7",

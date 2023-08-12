@@ -1,0 +1,8 @@
+{
+  "name": "@codeowners-js/tsconfig",
+  "version": "0.0.0-development",
+  "main": "tsconfig.json",
+  "peerDependencies": {
+    "typescript": ">=5.1.6"
+  }
+}
