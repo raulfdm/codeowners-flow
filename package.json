@@ -9,7 +9,9 @@
   "author": "Raul Melo",
   "license": "MIT",
   "scripts": {
-    "build": "turbo build"
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck"
   },
   "devDependencies": {
     "@codeowners-js/config": "workspace:*",
