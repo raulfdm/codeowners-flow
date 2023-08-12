@@ -11,9 +11,10 @@
   "scripts": {
     "build": "turbo build"
   },
-  "dependencies": {
-    "codeowners-js": "workspace:*",
+  "devDependencies": {
     "@codeowners-js/config": "workspace:*",
+    "codeowners-js": "workspace:*",
+    "eslint": "8.47.0",
     "turbo": "1.10.12"
   }
 }
