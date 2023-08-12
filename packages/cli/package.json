@@ -1,5 +1,5 @@
 {
-  "name": "codeowners-js",
+  "name": "@codeowners-js/cli",
   "version": "0.0.1",
   "description": "A CLI to manage CODEOWNERS file",
   "keywords": [
