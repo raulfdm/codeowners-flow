@@ -11,7 +11,7 @@ export function defineOwner(owner: Owner) {
 }
 
 const RuleSchema = z.object({
-  pattern: z.string(),
+  patterns: z.array(z.string()),
   excludePatterns: z.array(z.string()).optional(),
   owners: z.array(OwnerSchema),
   comments: z.array(z.string()).optional(),
@@ -25,7 +25,7 @@ export function defineRule(rule: Rule) {
 
 export const UserConfigSchema = z.object({
   outDir: z.string(),
-  rules: z.array(RuleSchema.required()),
+  rules: z.array(RuleSchema),
 });
 
 export type UserConfig = z.infer<typeof UserConfigSchema>;
