@@ -1,0 +1,15 @@
+# This file was generated automatically by codeowners-js. Do not edit it manually.
+# Instead, change the `codeowners.config.mjs` file in the root of your project.
+
+# -------------------- START -------------------- #
+# Everything else will be fallback to @company/core-team to approve
+## Matching patterns...
+* @company/core-team @company/infra-team
+# -------------------- END -------------------- #
+
+# -------------------- START -------------------- #
+## Matching patterns...
+apps/website-frontend @company/website-team @company/core-team @company/infra-team
+## Except...
+apps/website-frontend/github
+# -------------------- END -------------------- #

@@ -1,5 +1,5 @@
 {
-  "name": "@codeowners-js/cli",
+  "name": "codeowners-js",
   "version": "0.0.1",
   "description": "A CLI to manage CODEOWNERS file",
   "keywords": [
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@codeowners-js/config": "workspace:*",
+    "@manypkg/find-root": "2.2.1",
     "zod": "3.21.4"
   },
   "devDependencies": {
