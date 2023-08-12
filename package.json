@@ -12,7 +12,8 @@
     "build": "turbo build"
   },
   "dependencies": {
-    "codeowners-manager": "workspace:*",
+    "codeowners-js": "workspace:*",
+    "@codeowners-js/config": "workspace:*",
     "turbo": "1.10.12"
   }
 }
