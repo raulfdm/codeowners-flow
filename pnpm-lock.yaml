@@ -26,6 +26,9 @@ importers:
       '@codeowners-js/config':
         specifier: workspace:*
         version: link:../config
+      '@codeowners-js/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       '@manypkg/find-root':
         specifier: 2.2.1
         version: 2.2.1
@@ -70,6 +73,9 @@ importers:
       '@codeowners-js/eslint':
         specifier: workspace:*
         version: link:../eslint
+      '@codeowners-js/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       '@types/node':
         specifier: '16'
         version: 16.18.39
@@ -115,6 +121,12 @@ importers:
         version: 8.47.0
       typescript:
         specifier: 5.1.6
+        version: 5.1.6
+
+  packages/tsconfig:
+    dependencies:
+      typescript:
+        specifier: '>=5.1.6'
         version: 5.1.6
 
 packages:

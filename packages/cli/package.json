@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@codeowners-js/config": "workspace:*",
+    "@codeowners-js/tsconfig": "workspace:*",
     "@manypkg/find-root": "2.2.1",
     "zod": "3.21.4"
   },
