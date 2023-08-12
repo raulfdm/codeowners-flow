@@ -28,7 +28,8 @@
     "prepare": "pnpm turbo build --filter config --output-logs errors-only",
     "build": "vite build",
     "dev": "tsx src/cli.ts",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "cosmiconfig": "8.2.0",

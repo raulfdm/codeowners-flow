@@ -30,7 +30,8 @@
     "prepare": "pnpm turbo build --filter codeowners-js --output-logs errors-only",
     "build": "vite build",
     "dev": "tsx src/index.ts",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@codeowners-js/config": "workspace:*",
