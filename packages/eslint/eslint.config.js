@@ -10,13 +10,7 @@ const compat = new FlatCompat({
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   {
-    ignores: [
-      "dist/**/*",
-      "node_modules/**/*",
-      ".turbo/**/*",
-      "coverage/**/*",
-      "vite.config.ts",
-    ],
+    ignores: ["dist/**/*", "node_modules/**/*", ".turbo/**/*", "coverage/**/*"],
   },
   ...compat.extends("plugin:@typescript-eslint/recommended"),
   ...compat.plugins("@typescript-eslint", "simple-import-sort"),
