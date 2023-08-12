@@ -1,13 +1,14 @@
 import { cosmiconfig } from "cosmiconfig";
+import type { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
+
 import {
-  UserConfigSchema,
   defineConfig,
   defineOwner,
   defineRule,
   type UserConfig,
+  UserConfigSchema,
 } from "./schema.js";
-import { ZodError } from "zod";
 
 const explorer = cosmiconfig("codeowners");
 
@@ -27,4 +28,5 @@ export async function loadConfig() {
   }
 }
 
-export { UserConfig, defineConfig, defineOwner, defineRule };
+export type { UserConfig };
+export { defineConfig, defineOwner, defineRule };
