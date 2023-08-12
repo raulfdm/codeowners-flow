@@ -8,7 +8,10 @@ importers:
 
   .:
     dependencies:
-      codeowners-manager:
+      '@codeowners-js/config':
+        specifier: workspace:*
+        version: link:packages/config
+      codeowners-js:
         specifier: workspace:*
         version: link:packages/cli
       turbo:
@@ -16,6 +19,31 @@ importers:
         version: 1.10.12
 
   packages/cli:
+    dependencies:
+      '@codeowners-js/config':
+        specifier: workspace:*
+        version: link:../config
+      zod:
+        specifier: 3.21.4
+        version: 3.21.4
+    devDependencies:
+      '@types/node':
+        specifier: '16'
+        version: 16.18.39
+      tsx:
+        specifier: 3.12.7
+        version: 3.12.7
+      typescript:
+        specifier: 5.1.6
+        version: 5.1.6
+      vite:
+        specifier: 4.4.8
+        version: 4.4.8(@types/node@16.18.39)
+      vite-plugin-dts:
+        specifier: 3.5.1
+        version: 3.5.1(@types/node@16.18.39)(typescript@5.1.6)(vite@4.4.8)
+
+  packages/config:
     dependencies:
       cosmiconfig:
         specifier: 8.2.0

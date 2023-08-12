@@ -23,12 +23,12 @@ export function defineRule(rule: Rule) {
   return rule;
 }
 
-const UserConfigSchema = z.object({
+export const UserConfigSchema = z.object({
   outDir: z.string(),
   rules: z.array(RuleSchema.required()),
 });
 
-type UserConfig = z.infer<typeof UserConfigSchema>;
+export type UserConfig = z.infer<typeof UserConfigSchema>;
 
 export function defineConfig(config: UserConfig) {
   return config;

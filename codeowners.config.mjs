@@ -1,8 +1,4 @@
-import {
-  defineConfig,
-  defineRule,
-  defineOwner,
-} from "codeowners-manager/config";
+import { defineConfig, defineRule, defineOwner } from "@codeowners-js/config";
 
 const mainTeams = [
   defineOwner({
@@ -13,6 +9,7 @@ const mainTeams = [
   }),
 ];
 
+/** @type  */
 export default defineConfig({
   outDir: ".github",
   rules: [
