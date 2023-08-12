@@ -1,7 +1,7 @@
 import type { UserConfig } from "@codeowners-js/config";
 
 export function getCodeOwnersContent(userConfig: UserConfig) {
-  let content = [
+  const content = [
     "# This file was generated automatically by codeowners-js. Do not edit it manually.",
     "# Instead, change the `codeowners.config.mjs` file in the root of your project.\n",
   ];

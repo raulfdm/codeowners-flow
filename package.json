@@ -9,11 +9,14 @@
   "author": "Raul Melo",
   "license": "MIT",
   "scripts": {
-    "build": "turbo build"
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck"
   },
-  "dependencies": {
-    "codeowners-js": "workspace:*",
+  "devDependencies": {
     "@codeowners-js/config": "workspace:*",
+    "codeowners-js": "workspace:*",
+    "eslint": "8.47.0",
     "turbo": "1.10.12"
   }
 }

@@ -29,7 +29,9 @@
   "scripts": {
     "prepare": "pnpm turbo build --filter codeowners-js --output-logs errors-only",
     "build": "vite build",
-    "dev": "tsx src/index.ts"
+    "dev": "tsx src/index.ts",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@codeowners-js/config": "workspace:*",
@@ -37,7 +39,9 @@
     "zod": "3.21.4"
   },
   "devDependencies": {
+    "@codeowners-js/eslint": "workspace:*",
     "@types/node": "16",
+    "eslint": "8.47.0",
     "tsx": "3.12.7",
     "typescript": "5.1.6",
     "vite": "4.4.8",

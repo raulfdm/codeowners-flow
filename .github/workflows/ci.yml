@@ -37,5 +37,8 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Run build
+      - name: Quality checks
+        run: pnpm lint && pnpm typecheck
+
+      - name: Build libs
         run: pnpm build
