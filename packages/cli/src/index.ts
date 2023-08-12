@@ -1,9 +1,26 @@
-import { loadConfig } from "@codeowners-js/config";
+import { type UserConfig, loadConfig } from "@codeowners-js/config";
+import path from "node:path";
+import fs from "node:fs";
+import { getCodeOwnersContent } from "./get-codeowners-content.js";
+import { findRoot } from "@manypkg/find-root";
 
-async function main() {
+(async function main() {
   const config = await loadConfig();
 
-  console.log(config);
+  const ownersContent = getCodeOwnersContent(config);
+  const ownersPath = await getCodeOwnersPath(config);
+
+  writeCodeOwnersFile(ownersPath, ownersContent);
+
+  console.log("Codeowners file generated! 🎉");
+  console.log(`You can find it at: "${ownersPath}".\n`);
+})();
+
+function writeCodeOwnersFile(path: string, content: string): void {
+  fs.writeFileSync(path, content, "utf-8");
 }
 
-main();
+async function getCodeOwnersPath(userConfig: UserConfig): Promise<string> {
+  const root = await findRoot(process.cwd());
+  return path.join(root.rootDir, userConfig.outDir, "CODEOWNERS");
+}
