@@ -27,7 +27,8 @@
   "scripts": {
     "prepare": "pnpm turbo build --filter config --output-logs errors-only",
     "build": "vite build",
-    "dev": "tsx src/cli.ts"
+    "dev": "tsx src/cli.ts",
+    "lint": "eslint src"
   },
   "dependencies": {
     "cosmiconfig": "8.2.0",
@@ -35,7 +36,9 @@
     "zod-validation-error": "1.3.1"
   },
   "devDependencies": {
+    "@codeowners-js/eslint": "workspace:*",
     "@types/node": "16",
+    "eslint": "8.47.0",
     "tsx": "3.12.7",
     "typescript": "5.1.6",
     "vite": "4.4.8",
