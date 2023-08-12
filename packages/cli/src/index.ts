@@ -1,8 +1,10 @@
-import { type UserConfig, loadConfig } from "@codeowners-js/config";
-import path from "node:path";
 import fs from "node:fs";
-import { getCodeOwnersContent } from "./get-codeowners-content.js";
+import path from "node:path";
+
+import { loadConfig,type UserConfig } from "@codeowners-js/config";
 import { findRoot } from "@manypkg/find-root";
+
+import { getCodeOwnersContent } from "./get-codeowners-content.js";
 
 (async function main() {
   const config = await loadConfig();
