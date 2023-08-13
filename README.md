@@ -50,7 +50,7 @@ Enter this tool. It provides teams the capability to script code ownership rules
 
 ## Usage
 
-For comprehensive instructions, please refer to the [CLI README](./packages/cli/README.md).
+For comprehensive instructions, please refer to the [CLI README](./packages/core/README.md).
 
 ## License
 
