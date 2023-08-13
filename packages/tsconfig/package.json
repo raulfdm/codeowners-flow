@@ -4,5 +4,8 @@
   "main": "tsconfig.json",
   "peerDependencies": {
     "typescript": ">=5.1.6"
+  },
+  "dependencies": {
+    "@tsconfig/node16": "16.1.0"
   }
 }
