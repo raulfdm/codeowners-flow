@@ -12,12 +12,14 @@
     "build": "turbo build",
     "lint": "turbo lint",
     "test": "turbo test",
-    "typecheck": "turbo typecheck"
+    "typecheck": "turbo typecheck",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@codeowners-js/config": "workspace:*",
     "codeowners-js": "workspace:*",
     "eslint": "8.47.0",
+    "husky": "8.0.3",
     "turbo": "1.10.12"
   }
 }
