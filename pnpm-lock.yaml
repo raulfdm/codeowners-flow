@@ -8,10 +8,10 @@ importers:
 
   .:
     devDependencies:
-      '@codeowners-js/config':
+      '@codeowners-flow/config':
         specifier: workspace:*
         version: link:packages/config
-      codeowners-js:
+      codeowners-flow:
         specifier: workspace:*
         version: link:packages/cli
       eslint:
@@ -32,12 +32,9 @@ importers:
 
   packages/cli:
     dependencies:
-      '@codeowners-js/config':
+      '@codeowners-flow/config':
         specifier: workspace:*
         version: link:../config
-      '@codeowners-js/tsconfig':
-        specifier: workspace:*
-        version: link:../tsconfig
       '@manypkg/find-root':
         specifier: 2.2.1
         version: 2.2.1
@@ -45,9 +42,12 @@ importers:
         specifier: 3.21.4
         version: 3.21.4
     devDependencies:
-      '@codeowners-js/eslint':
+      '@codeowners-flow/eslint':
         specifier: workspace:*
         version: link:../eslint
+      '@codeowners-flow/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       '@types/node':
         specifier: '16'
         version: 16.18.39
@@ -82,10 +82,10 @@ importers:
         specifier: 1.3.1
         version: 1.3.1(zod@3.21.4)
     devDependencies:
-      '@codeowners-js/eslint':
+      '@codeowners-flow/eslint':
         specifier: workspace:*
         version: link:../eslint
-      '@codeowners-js/tsconfig':
+      '@codeowners-flow/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/node':

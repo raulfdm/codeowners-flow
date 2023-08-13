@@ -1,5 +1,5 @@
 {
-  "name": "codeowners-js",
+  "name": "codeowners-flow",
   "version": "0.0.1",
   "description": "A CLI to manage CODEOWNERS file",
   "keywords": [
@@ -27,7 +27,7 @@
     }
   },
   "scripts": {
-    "prepare": "pnpm turbo build --filter codeowners-js --output-logs errors-only",
+    "prepare": "pnpm turbo build --filter codeowners-flow --output-logs errors-only",
     "build": "vite build",
     "dev": "tsx src/index.ts",
     "lint": "eslint src",
@@ -35,13 +35,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@codeowners-js/config": "workspace:*",
-    "@codeowners-js/tsconfig": "workspace:*",
+    "@codeowners-flow/config": "workspace:*",
     "@manypkg/find-root": "2.2.1",
     "zod": "3.21.4"
   },
   "devDependencies": {
-    "@codeowners-js/eslint": "workspace:*",
+    "@codeowners-flow/eslint": "workspace:*",
+    "@codeowners-flow/tsconfig": "workspace:*",
     "@types/node": "16",
     "eslint": "8.47.0",
     "tsx": "3.12.7",

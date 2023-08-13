@@ -1,9 +1,9 @@
-import type { UserConfig } from '@codeowners-js/config';
+import type { UserConfig } from '@codeowners-flow/config';
 
 import { generateCodeOwners } from './generate-codeowners.js';
 
 const mockLoadConfig = vi.fn();
-vi.mock('@codeowners-js/config', () => ({
+vi.mock('@codeowners-flow/config', () => ({
   loadConfig: (...args: any) => mockLoadConfig(...args),
 }));
 
@@ -52,7 +52,7 @@ describe('fn: generateCodeOwners', () => {
 
     const [, content] = mockWriteFileSync.mock.calls[0];
     expect(content).toMatchInlineSnapshot(`
-      "# This file was generated automatically by codeowners-js. Do not edit it manually.
+      "# This file was generated automatically by codeowners-flow. Do not edit it manually.
       # Instead, change the \`codeowners.config.mjs\` file in the root of your project.
 
       # -------------------- START -------------------- #
@@ -68,7 +68,7 @@ describe('fn: generateCodeOwners', () => {
 
     expect(result).toMatchInlineSnapshot(`
       {
-        "ownersContent": "# This file was generated automatically by codeowners-js. Do not edit it manually.
+        "ownersContent": "# This file was generated automatically by codeowners-flow. Do not edit it manually.
       # Instead, change the \`codeowners.config.mjs\` file in the root of your project.
 
       # -------------------- START -------------------- #

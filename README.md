@@ -1,4 +1,4 @@
-# CodeOwners JS
+# codeowners-flow
 
 > Programmatically manage your CODEOWNERS file.
 

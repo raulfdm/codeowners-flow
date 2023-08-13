@@ -1,8 +1,8 @@
-import type { UserConfig } from '@codeowners-js/config';
+import type { UserConfig } from '@codeowners-flow/config';
 
 export function getCodeOwnersContent(userConfig: UserConfig) {
   const content = [
-    '# This file was generated automatically by codeowners-js. Do not edit it manually.',
+    '# This file was generated automatically by codeowners-flow. Do not edit it manually.',
     '# Instead, change the `codeowners.config.mjs` file in the root of your project.\n',
   ];
 
