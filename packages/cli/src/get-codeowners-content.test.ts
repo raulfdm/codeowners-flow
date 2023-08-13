@@ -1,4 +1,5 @@
 import type { UserConfig } from "@codeowners-js/config";
+
 import { getCodeOwnersContent } from "./get-codeowners-content.js";
 
 describe("getCodeOwnersContent", () => {

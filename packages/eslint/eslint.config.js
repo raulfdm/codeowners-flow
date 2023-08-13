@@ -41,4 +41,10 @@ export default [
       "@typescript-eslint/consistent-type-imports": "error",
     },
   },
+  {
+    files: ["**/*.test.*", "**/*.spec.*"],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+    },
+  },
 ];

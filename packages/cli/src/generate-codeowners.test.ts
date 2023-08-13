@@ -1,4 +1,5 @@
 import type { UserConfig } from "@codeowners-js/config";
+
 import { generateCodeOwners } from "./generate-codeowners.js";
 
 const mockLoadConfig = vi.fn();
@@ -49,7 +50,7 @@ describe("fn: generateCodeOwners", () => {
   it.concurrent("writes CODEOWNERS content", async () => {
     await generateCodeOwners();
 
-    const [_, content] = mockWriteFileSync.mock.calls[0];
+    const [, content] = mockWriteFileSync.mock.calls[0];
     expect(content).toMatchInlineSnapshot(`
       "# This file was generated automatically by codeowners-js. Do not edit it manually.
       # Instead, change the \`codeowners.config.mjs\` file in the root of your project.
