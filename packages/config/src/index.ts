@@ -1,6 +1,6 @@
-import { cosmiconfig } from "cosmiconfig";
-import type { ZodError } from "zod";
-import { fromZodError } from "zod-validation-error";
+import { cosmiconfig } from 'cosmiconfig';
+import type { ZodError } from 'zod';
+import { fromZodError } from 'zod-validation-error';
 
 import {
   defineConfig,
@@ -8,9 +8,9 @@ import {
   defineRule,
   type UserConfig,
   UserConfigSchema,
-} from "./schema.js";
+} from './schema.js';
 
-const explorer = cosmiconfig("codeowners");
+const explorer = cosmiconfig('codeowners');
 
 export async function loadConfig() {
   const config = await explorer.search();
@@ -23,7 +23,7 @@ export async function loadConfig() {
     // you may print it to console
     // or return it via an API
     console.error(validationError.message);
-    console.log("\n");
+    console.log('\n');
     process.exit(1);
   }
 }

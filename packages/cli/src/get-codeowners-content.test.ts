@@ -1,19 +1,19 @@
-import type { UserConfig } from "@codeowners-js/config";
+import type { UserConfig } from '@codeowners-js/config';
 
-import { getCodeOwnersContent } from "./get-codeowners-content.js";
+import { getCodeOwnersContent } from './get-codeowners-content.js';
 
-describe("getCodeOwnersContent", () => {
-  it("generates basic content", () => {
+describe('getCodeOwnersContent', () => {
+  it('generates basic content', () => {
     const mockUserConfig: UserConfig = {
-      outDir: "./test",
+      outDir: './test',
       rules: [
         {
           owners: [
             {
-              name: "@team/core",
+              name: '@team/core',
             },
           ],
-          patterns: ["packages/core/**/*"],
+          patterns: ['packages/core/**/*'],
         },
       ],
     };
@@ -30,20 +30,20 @@ describe("getCodeOwnersContent", () => {
     `);
   });
 
-  it("includes multiple patterns", () => {
+  it('includes multiple patterns', () => {
     const mockUserConfig: UserConfig = {
-      outDir: "./test",
+      outDir: './test',
       rules: [
         {
           owners: [
             {
-              name: "@team/core",
+              name: '@team/core',
             },
           ],
           patterns: [
-            "packages/core",
-            "pnpm-workspace.yaml",
-            ".github/workflows",
+            'packages/core',
+            'pnpm-workspace.yaml',
+            '.github/workflows',
           ],
         },
       ],
@@ -63,18 +63,18 @@ describe("getCodeOwnersContent", () => {
     `);
   });
 
-  it("includes the comments sent", () => {
+  it('includes the comments sent', () => {
     const mockUserConfig: UserConfig = {
-      outDir: "./test",
+      outDir: './test',
       rules: [
         {
           owners: [
             {
-              name: "@team/core",
+              name: '@team/core',
             },
           ],
-          patterns: ["packages/core/**/*"],
-          comments: ["This is a comment", "This is another comment"],
+          patterns: ['packages/core/**/*'],
+          comments: ['This is a comment', 'This is another comment'],
         },
       ],
     };
@@ -93,18 +93,18 @@ describe("getCodeOwnersContent", () => {
     `);
   });
 
-  it("includes the exclude patterns", () => {
+  it('includes the exclude patterns', () => {
     const mockUserConfig: UserConfig = {
-      outDir: "./test",
+      outDir: './test',
       rules: [
         {
           owners: [
             {
-              name: "@team/core",
+              name: '@team/core',
             },
           ],
-          patterns: ["packages/core/**/*"],
-          excludePatterns: ["packages/core/**/test"],
+          patterns: ['packages/core/**/*'],
+          excludePatterns: ['packages/core/**/test'],
         },
       ],
     };
@@ -123,18 +123,18 @@ describe("getCodeOwnersContent", () => {
     `);
   });
 
-  it("includes multiple exclude patterns", () => {
+  it('includes multiple exclude patterns', () => {
     const mockUserConfig: UserConfig = {
-      outDir: "./test",
+      outDir: './test',
       rules: [
         {
           owners: [
             {
-              name: "@team/core",
+              name: '@team/core',
             },
           ],
-          patterns: ["packages/core/**/*"],
-          excludePatterns: ["packages/core/**/test", "packages/core/**/mock"],
+          patterns: ['packages/core/**/*'],
+          excludePatterns: ['packages/core/**/test', 'packages/core/**/mock'],
         },
       ],
     };

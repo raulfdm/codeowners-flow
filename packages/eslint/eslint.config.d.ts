@@ -1,3 +1,3 @@
-import { Linter } from "eslint";
+import { Linter } from 'eslint';
 
 export default [] as Linter.FlatConfig[];
