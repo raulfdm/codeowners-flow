@@ -1,7 +1,8 @@
 /// <reference types="vitest" />
-import { defineConfig } from "vite";
-import path from "node:path";
-import dts from "vite-plugin-dts";
+import path from 'node:path';
+
+import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   test: {
@@ -10,17 +11,17 @@ export default defineConfig({
   },
   plugins: [dts()],
   build: {
-    target: "node16",
+    target: 'node16',
     rollupOptions: {
       external: function isExternal(id: string) {
-        return !id.startsWith(".") && !path.isAbsolute(id);
+        return !id.startsWith('.') && !path.isAbsolute(id);
       },
     },
-    outDir: "dist",
+    outDir: 'dist',
     lib: {
-      entry: "./src/index.ts",
-      fileName: "index",
-      formats: ["cjs", "es"],
+      entry: './src/index.ts',
+      fileName: 'index',
+      formats: ['cjs', 'es'],
     },
   },
 });

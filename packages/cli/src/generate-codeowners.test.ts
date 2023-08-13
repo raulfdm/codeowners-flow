@@ -1,53 +1,53 @@
-import type { UserConfig } from "@codeowners-js/config";
+import type { UserConfig } from '@codeowners-js/config';
 
-import { generateCodeOwners } from "./generate-codeowners.js";
+import { generateCodeOwners } from './generate-codeowners.js';
 
 const mockLoadConfig = vi.fn();
-vi.mock("@codeowners-js/config", () => ({
+vi.mock('@codeowners-js/config', () => ({
   loadConfig: (...args: any) => mockLoadConfig(...args),
 }));
 
 const mockWriteFileSync = vi.fn();
-vi.mock("node:fs", () => ({
+vi.mock('node:fs', () => ({
   default: {
     writeFileSync: (...args: any) => mockWriteFileSync(...args),
   },
 }));
 
 const mockFindRoot = vi.fn();
-vi.mock("@manypkg/find-root", () => ({
+vi.mock('@manypkg/find-root', () => ({
   findRoot: (...args: any) => mockFindRoot(...args),
 }));
 
-describe("fn: generateCodeOwners", () => {
+describe('fn: generateCodeOwners', () => {
   beforeEach(() => {
     mockLoadConfig.mockResolvedValue({
-      outDir: "./test",
+      outDir: './test',
       rules: [
         {
           owners: [
             {
-              name: "@team/core",
+              name: '@team/core',
             },
           ],
-          patterns: ["packages/core/**/*"],
+          patterns: ['packages/core/**/*'],
         },
       ],
     } satisfies UserConfig);
 
     mockFindRoot.mockResolvedValue({
-      rootDir: "/root",
+      rootDir: '/root',
     });
   });
 
-  it("writes CODEOWNERS file in the expected location", async () => {
+  it('writes CODEOWNERS file in the expected location', async () => {
     await generateCodeOwners();
 
     const [location] = mockWriteFileSync.mock.calls[0];
-    expect(location).toBe("/root/test/CODEOWNERS");
+    expect(location).toBe('/root/test/CODEOWNERS');
   });
 
-  it.concurrent("writes CODEOWNERS content", async () => {
+  it.concurrent('writes CODEOWNERS content', async () => {
     await generateCodeOwners();
 
     const [, content] = mockWriteFileSync.mock.calls[0];
@@ -63,7 +63,7 @@ describe("fn: generateCodeOwners", () => {
     `);
   });
 
-  it("returns codeowners path and content", async () => {
+  it('returns codeowners path and content', async () => {
     const result = await generateCodeOwners();
 
     expect(result).toMatchInlineSnapshot(`

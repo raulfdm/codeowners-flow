@@ -1,3 +1,3 @@
-import config from "@codeowners-js/eslint";
+import config from '@codeowners-js/eslint';
 
 export default config;

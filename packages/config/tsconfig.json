@@ -1,6 +1,3 @@
 {
-  "extends": "@codeowners-js/tsconfig",
-  "include": [
-    "src/**/*"
-  ],
+  "extends": "@codeowners-js/tsconfig"
 }

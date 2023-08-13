@@ -1,11 +1,6 @@
 {
   "extends": "@codeowners-js/tsconfig",
   "compilerOptions": {
-    "types": [
-      "vitest/globals"
-    ]
-  },
-  "include": [
-    "src/**/*"
-  ],
+    "types": ["vitest/globals"]
+  }
 }
