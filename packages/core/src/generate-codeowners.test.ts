@@ -1,9 +1,8 @@
-import type { UserConfig } from '@codeowners-flow/config';
-
+import type { UserConfig } from './config/index.js';
 import { generateCodeOwners } from './generate-codeowners.js';
 
 const mockLoadConfig = vi.fn();
-vi.mock('@codeowners-flow/config', () => ({
+vi.mock('./config/index.js', () => ({
   loadConfig: (...args: any) => mockLoadConfig(...args),
 }));
 

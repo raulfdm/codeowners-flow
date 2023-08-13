@@ -2,5 +2,6 @@
   "extends": "@codeowners-flow/tsconfig",
   "compilerOptions": {
     "types": ["vitest/globals"]
-  }
+  },
+  "include": ["src/**/*", "vite.config.ts"]
 }

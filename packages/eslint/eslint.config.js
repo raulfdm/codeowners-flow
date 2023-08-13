@@ -1,7 +1,6 @@
+import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import tsParser from '@typescript-eslint/parser';
-
-import { FlatCompat } from '@eslint/eslintrc';
 
 const compat = new FlatCompat({
   recommendedConfig: js.configs.recommended,
@@ -10,7 +9,13 @@ const compat = new FlatCompat({
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   {
-    ignores: ['dist/**/*', 'node_modules/**/*', '.turbo/**/*', 'coverage/**/*'],
+    ignores: [
+      'dist/**/*',
+      'node_modules/**/*',
+      '.turbo/**/*',
+      'coverage/**/*',
+      '**/*.d.ts',
+    ],
   },
   ...compat.extends('plugin:@typescript-eslint/recommended'),
   ...compat.plugins('@typescript-eslint', 'simple-import-sort'),

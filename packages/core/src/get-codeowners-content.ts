@@ -1,4 +1,4 @@
-import type { UserConfig } from '@codeowners-flow/config';
+import type { UserConfig } from './config/index.js';
 
 export function getCodeOwnersContent(userConfig: UserConfig) {
   const content = [

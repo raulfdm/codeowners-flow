@@ -1,5 +1,4 @@
-import type { UserConfig } from '@codeowners-flow/config';
-
+import type { UserConfig } from './config/index.js';
 import { getCodeOwnersContent } from './get-codeowners-content.js';
 
 describe('getCodeOwnersContent', () => {

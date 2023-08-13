@@ -14,10 +14,12 @@
     "lint": "turbo lint",
     "test": "turbo test",
     "typecheck": "turbo typecheck",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "devDependencies": {
-    "@codeowners-flow/config": "workspace:*",
+    "@codeowners-flow/eslint": "workspace:*",
+    "@codeowners-flow/tsconfig": "workspace:*",
     "codeowners-flow": "workspace:*",
     "eslint": "8.47.0",
     "husky": "8.0.3",
