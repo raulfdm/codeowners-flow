@@ -15,14 +15,16 @@ export function getCodeOwnersContent(userConfig: UserConfig) {
       partialConfig.push(...rule.comments.map((comment) => `# ${comment}`));
     }
 
+    partialConfig.push("## Matching patterns...");
+
     for (const pattern of rule.patterns) {
-      partialConfig.push("## Matching patterns...");
       partialConfig.push(`${pattern} ${ownersString}`);
     }
 
     if (rule.excludePatterns) {
+      partialConfig.push("## Except...");
+
       for (const excludePattern of rule.excludePatterns) {
-        partialConfig.push("## Except...");
         partialConfig.push(excludePattern);
       }
     }
