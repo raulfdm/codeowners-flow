@@ -20,7 +20,7 @@ describe('getCodeOwnersContent', () => {
 
     expect(getCodeOwnersContent(mockUserConfig)).toMatchInlineSnapshot(`
       "# This file was generated automatically by codeowners-flow. Do not edit it manually.
-      # Instead, change the \`codeowners.config.mjs\` file in the root of your project.
+      # Instead, modify the \`codeowners.config.mjs\` file located at the root of your project.
 
       # -------------------- START -------------------- #
       ## Matching patterns...
@@ -51,7 +51,7 @@ describe('getCodeOwnersContent', () => {
 
     expect(getCodeOwnersContent(mockUserConfig)).toMatchInlineSnapshot(`
       "# This file was generated automatically by codeowners-flow. Do not edit it manually.
-      # Instead, change the \`codeowners.config.mjs\` file in the root of your project.
+      # Instead, modify the \`codeowners.config.mjs\` file located at the root of your project.
 
       # -------------------- START -------------------- #
       ## Matching patterns...
@@ -81,7 +81,7 @@ describe('getCodeOwnersContent', () => {
 
     expect(getCodeOwnersContent(mockUserConfig)).toMatchInlineSnapshot(`
       "# This file was generated automatically by codeowners-flow. Do not edit it manually.
-      # Instead, change the \`codeowners.config.mjs\` file in the root of your project.
+      # Instead, modify the \`codeowners.config.mjs\` file located at the root of your project.
 
       # -------------------- START -------------------- #
       # This is a comment
@@ -111,7 +111,7 @@ describe('getCodeOwnersContent', () => {
 
     expect(getCodeOwnersContent(mockUserConfig)).toMatchInlineSnapshot(`
       "# This file was generated automatically by codeowners-flow. Do not edit it manually.
-      # Instead, change the \`codeowners.config.mjs\` file in the root of your project.
+      # Instead, modify the \`codeowners.config.mjs\` file located at the root of your project.
 
       # -------------------- START -------------------- #
       ## Matching patterns...
@@ -141,7 +141,7 @@ describe('getCodeOwnersContent', () => {
 
     expect(getCodeOwnersContent(mockUserConfig)).toMatchInlineSnapshot(`
       "# This file was generated automatically by codeowners-flow. Do not edit it manually.
-      # Instead, change the \`codeowners.config.mjs\` file in the root of your project.
+      # Instead, modify the \`codeowners.config.mjs\` file located at the root of your project.
 
       # -------------------- START -------------------- #
       ## Matching patterns...
