@@ -40,5 +40,8 @@ jobs:
       - name: Quality checks
         run: pnpm lint && pnpm typecheck
 
+      - name: Test
+        run: pnpm test
+
       - name: Build libs
         run: pnpm build
