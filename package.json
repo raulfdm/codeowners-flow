@@ -21,7 +21,7 @@
     "@changesets/cli": "2.26.2",
     "@codeowners-flow/eslint": "workspace:*",
     "@codeowners-flow/tsconfig": "workspace:*",
-    "codeowners-flow": "workspace:*",
+    "@codeowners-flow/cli": "workspace:*",
     "eslint": "8.47.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",

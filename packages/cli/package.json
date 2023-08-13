@@ -1,5 +1,5 @@
 {
-  "name": "codeowners-flow",
+  "name": "@codeowners-flow/cli",
   "version": "0.0.1",
   "description": "A CLI to manage CODEOWNERS file",
   "keywords": [

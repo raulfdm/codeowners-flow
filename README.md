@@ -1,4 +1,4 @@
-# codeowners-flow
+# @codeowners-flow/cli
 
 > Programmatically manage your CODEOWNERS file.
 
