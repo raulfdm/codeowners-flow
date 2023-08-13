@@ -1,5 +1,5 @@
 {
-  "name": "@codeowners-js/eslint",
+  "name": "@codeowners-flow/eslint",
   "private": true,
   "version": "0.0.0-development",
   "type": "module",

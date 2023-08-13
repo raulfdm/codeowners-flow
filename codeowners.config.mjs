@@ -1,4 +1,4 @@
-import { defineConfig, defineRule, defineOwner } from '@codeowners-js/config';
+import { defineConfig, defineRule, defineOwner } from '@codeowners-flow/config';
 
 const mainTeams = [
   defineOwner({

@@ -1,5 +1,5 @@
 {
-  "extends": "@codeowners-js/tsconfig",
+  "extends": "@codeowners-flow/tsconfig",
   "compilerOptions": {
     "types": ["vitest/globals"]
   }

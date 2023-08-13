@@ -1,5 +1,5 @@
 {
-  "name": "@codeowners-js/tsconfig",
+  "name": "@codeowners-flow/tsconfig",
   "version": "0.0.0-development",
   "main": "tsconfig.json",
   "peerDependencies": {

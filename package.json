@@ -1,5 +1,5 @@
 {
-  "name": "codeowners-js-monorepo",
+  "name": "codeowners-flow-monorepo",
   "version": "0.0.0-develop",
   "type": "module",
   "keywords": [
@@ -17,8 +17,8 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@codeowners-js/config": "workspace:*",
-    "codeowners-js": "workspace:*",
+    "@codeowners-flow/config": "workspace:*",
+    "codeowners-flow": "workspace:*",
     "eslint": "8.47.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
