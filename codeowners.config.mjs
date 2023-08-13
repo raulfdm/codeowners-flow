@@ -9,7 +9,6 @@ const mainTeams = [
   }),
 ];
 
-/** @type  */
 export default defineConfig({
   outDir: '.github',
   rules: [

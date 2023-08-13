@@ -9,7 +9,12 @@ export default defineConfig({
     globals: true,
     clearMocks: true,
   },
-  plugins: [dts()],
+  plugins: [
+    dts({
+      outDir: 'dist',
+      exclude: ['src/**/*.test.*', 'vite.config.ts'],
+    }),
+  ],
   build: {
     target: 'node16',
     rollupOptions: {
@@ -19,8 +24,10 @@ export default defineConfig({
     },
     outDir: 'dist',
     lib: {
-      entry: './src/index.ts',
-      fileName: 'index',
+      entry: {
+        index: './src/index.ts',
+        config: './src/config/index.ts',
+      },
       formats: ['cjs', 'es'],
     },
   },
