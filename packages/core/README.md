@@ -1,15 +1,15 @@
 # codeowners-flow
 
-> **Note**
-> To learn more about CODEOWNERS, please refer to the [Github official documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
-
 ## About
 
-`codeowners-flow` lets you manage your CODEOWNERS file programmatically.
+`codeowners-flow` lets you manage your `CODEOWNERS` file programmatically.
 
-Instead of directly creating and maintaining the CODEOWNERS markup file, with `codeowners-flow` you can define your code owners rules in JavaScript. This allows you to automatically generate the final file based on this configuration.
+Instead of directly creating and maintaining the `CODEOWNERS` markup file, with `codeowners-flow` you can define your code owners rules in JavaScript.
 
 To understand the motivations behind this project, refer to the [root repository README](../../README.md).
+
+> **Note**
+> To learn more about CODEOWNERS, please refer to the [Github official documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
 
 ## Getting started
 
@@ -47,7 +47,7 @@ After that, you can run the CLI:
 npx codeowners-flow generate
 ```
 
-The CLI will read your configuration and generate a CODEOWNERS file in the specified `outDir``:
+The CLI will read your configuration and generate a `CODEOWNERS` file in the specified `outDir``:
 
 **.github/CODEOWNERS**
 
