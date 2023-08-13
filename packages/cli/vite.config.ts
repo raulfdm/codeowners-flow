@@ -1,8 +1,12 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import path from "node:path";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
+  test: {
+    globals: true,
+  },
   plugins: [dts()],
   build: {
     target: "node16",
