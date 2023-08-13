@@ -1,20 +1,28 @@
 {
-  "name": "codeowners-flow",
+  "name": "@codeowners-flow/cli",
   "version": "0.0.1",
-  "description": "A CLI to manage CODEOWNERS file",
+  "description": "A tool to script and manage the CODEOWNERS file programmatically",
+  "bin": {
+    "codeowners-flow": "./bin/index.cjs"
+  },
   "keywords": [
     "codeowners",
     "github",
-    "git"
+    "git",
+    "azure",
+    "bitbucket"
   ],
-  "author": "Raul Melo",
+  "author": "Raul Melo <contact@raulmelo.me>",
   "license": "MIT",
   "type": "module",
   "files": [
     "dist",
+    "bin",
     "README.md",
     "index.d.ts",
-    "config.d.ts"
+    "config.d.ts",
+    "CHANGELOG.md",
+    "LICENSE"
   ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
