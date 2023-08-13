@@ -8,6 +8,12 @@ importers:
 
   .:
     devDependencies:
+      '@codeowners-flow/eslint':
+        specifier: workspace:*
+        version: link:packages/eslint
+      '@codeowners-flow/tsconfig':
+        specifier: workspace:*
+        version: link:packages/tsconfig
       codeowners-flow:
         specifier: workspace:*
         version: link:packages/core

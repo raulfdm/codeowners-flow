@@ -18,15 +18,13 @@
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
+    "@codeowners-flow/eslint": "workspace:*",
+    "@codeowners-flow/tsconfig": "workspace:*",
     "codeowners-flow": "workspace:*",
     "eslint": "8.47.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
     "prettier": "3.0.1",
     "turbo": "1.10.12"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write",
-    "*.{js,jsx,ts,tsx}": "eslint --fix"
   }
 }
