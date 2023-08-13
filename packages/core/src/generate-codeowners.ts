@@ -1,9 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { loadConfig, type UserConfig } from '@codeowners-flow/config';
 import { findRoot } from '@manypkg/find-root';
 
+import { loadConfig, type UserConfig } from './config/index.js';
 import { getCodeOwnersContent } from './get-codeowners-content.js';
 
 export async function generateCodeOwners(): Promise<{
