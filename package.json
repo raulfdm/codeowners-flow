@@ -20,6 +20,7 @@
     "codeowners-js": "workspace:*",
     "eslint": "8.47.0",
     "husky": "8.0.3",
+    "lint-staged": "13.2.3",
     "turbo": "1.10.12"
   }
 }

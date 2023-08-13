@@ -49,5 +49,8 @@
     "vite": "4.4.8",
     "vite-plugin-dts": "3.5.1",
     "vitest": "0.34.1"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "eslint --fix"
   }
 }
