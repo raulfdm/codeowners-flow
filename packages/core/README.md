@@ -53,11 +53,13 @@ The CLI will read your configuration and generate a CODEOWNERS file in the speci
 
 ```
 # This file was generated automatically by codeowners-flow. Do not edit it manually.
-# Instead, modify the codeowners.config.mjs file located at the root of your project.
+# Instead, modify the `codeowners.config.mjs` file located at the root of your project.
+
 # -------------------- START -------------------- #
 ## Matching patterns...
 * @company/team
 # -------------------- END -------------------- #
+
 ```
 
 ## Config
@@ -100,7 +102,7 @@ An array of code owner patterns. [See the official syntax for more details](http
 
 ##### excludePatterns
 
-Type: `string[] | undefined`
+Type: `string[] | undefined`\
 Default: `undefined`
 
 A list of patterns to exclude.
@@ -115,7 +117,7 @@ A list of patterns to exclude.
 
 #### comments
 
-Type: `string[] | undefined`
+Type: `string[] | undefined`\
 Default: `undefined`
 
 Comments that will be placed above the matching rule. These can be useful to add descriptive information for each rule.
