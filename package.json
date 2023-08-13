@@ -18,6 +18,7 @@
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
+    "@changesets/cli": "2.26.2",
     "@codeowners-flow/eslint": "workspace:*",
     "@codeowners-flow/tsconfig": "workspace:*",
     "codeowners-flow": "workspace:*",

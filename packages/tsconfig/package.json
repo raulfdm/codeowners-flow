@@ -1,5 +1,6 @@
 {
   "name": "@codeowners-flow/tsconfig",
+  "private": true,
   "version": "0.0.0-development",
   "main": "tsconfig.json",
   "peerDependencies": {
