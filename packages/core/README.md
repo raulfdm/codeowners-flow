@@ -92,13 +92,13 @@ Type: `string`
 
 The name of an owner (e.g., `@company/some-team`).
 
-###### patterns
+##### patterns
 
 Type: `string[]`
 
 An array of code owner patterns. [See the official syntax for more details](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners#codeowners-syntax).
 
-###### excludePatterns
+##### excludePatterns
 
 Type: `string[] | undefined`
 Default: `undefined`
