@@ -1,11 +1,13 @@
 import meow from 'meow';
 
 import { generateCodeOwners } from './generate-codeowners.js';
+import { initProject } from './init.js';
 
 const cli = meow(
   `
   Usage
-    $ codeowners-flow generate
+  $ codeowners-flow generate
+  $ codeowners-flow init
 
   Example
     $ codeowners-flow generate
@@ -29,6 +31,17 @@ switch (command) {
       })
       .catch((error) => {
         console.error('Error generating CODEOWNERS file:', error);
+        process.exit(1);
+      });
+    break;
+  }
+  case 'init': {
+    initProject()
+      .then(() => {
+        console.log('Configuration file created! 🎉');
+      })
+      .catch((error) => {
+        console.error('Error initializing project:', error);
         process.exit(1);
       });
     break;
