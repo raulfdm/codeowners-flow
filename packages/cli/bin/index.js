@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 'use strict';
 
-require('../dist/index.cjs');
+import('../dist/index.js');
