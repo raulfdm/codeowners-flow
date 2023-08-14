@@ -28,30 +28,18 @@ The first step is to install `codeowners-flow` in your project:
 pnpm add codeowners-flow
 ```
 
-Next, create a file named `codeowners.config.mjs`:
+Next, run the init command:
 
-```js
-/** @type {import('@codeowners-flow/cli/config').UserConfig} */
-export default {
-  outDir: '.github',
-  rules: [
-    {
-      patterns: ['*'],
-      owners: [
-        {
-          name: '@company/team',
-        },
-      ],
-    },
-  ],
-};
+```bash
+pnpm codeowners-flow init # or npx codeowners-flow init
 ```
+
+This command will create a file in the folder you're named `codeowners.config.mjs`. This config file is where you're gonna define your code owners shape.
 
 After that, you can run the CLI:
 
 ```bash
-pnpm codeowners-flow generate
-# or npx codeowners-flow generate
+pnpm codeowners-flow generate # or npx codeowners-flow generate
 ```
 
 The CLI will read your configuration and generate a `CODEOWNERS` file in the specified `outDir`:
