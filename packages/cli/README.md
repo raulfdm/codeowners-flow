@@ -11,6 +11,11 @@ Instead of directly creating and maintaining the `CODEOWNERS` markup file, with 
 
 To understand the motivations behind this project, refer to the [root repository README](https://github.com/raulfdm/codeowners-manager/blob/main/README.md).
 
+## Prerequisite
+
+- Node 16 or later
+- pnpm, yarn, or npm
+
 ## Getting started
 
 The first step is to install `codeowners-flow` in your project:
@@ -45,7 +50,8 @@ export default {
 After that, you can run the CLI:
 
 ```bash
-npx codeowners-flow generate
+pnpm codeowners-flow generate
+# or npx codeowners-flow generate
 ```
 
 The CLI will read your configuration and generate a `CODEOWNERS` file in the specified `outDir`:
