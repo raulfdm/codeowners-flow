@@ -1,15 +1,15 @@
-# codeowners-flow
+# @codeowners-flow/cli
 
 ## About
 
-`codeowners-flow` lets you manage your `CODEOWNERS` file programmatically.
+`@codeowners-flow/cli` lets you manage your `CODEOWNERS` file programmatically.
 
-Instead of directly creating and maintaining the `CODEOWNERS` markup file, with `codeowners-flow` you can define your code owners rules in JavaScript.
-
-To understand the motivations behind this project, refer to the [root repository README](../../README.md).
+Instead of directly creating and maintaining the `CODEOWNERS` markup file, with `@codeowners-flow/cli` you can define your code owners rules in JavaScript, and based on that, generate the `CODEOWNERS` file for you.
 
 > **Note**
 > To learn more about CODEOWNERS, please refer to the [Github official documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
+
+To understand the motivations behind this project, refer to the [root repository README](https://github.com/raulfdm/codeowners-manager/blob/main/README.md).
 
 ## Getting started
 
@@ -26,6 +26,7 @@ pnpm add codeowners-flow
 Next, create a file named `codeowners.config.mjs`:
 
 ```js
+/** @type {import('@codeowners-flow/cli/config').UserConfig} */
 export default {
   outDir: '.github',
   rules: [
@@ -47,7 +48,7 @@ After that, you can run the CLI:
 npx codeowners-flow generate
 ```
 
-The CLI will read your configuration and generate a `CODEOWNERS` file in the specified `outDir``:
+The CLI will read your configuration and generate a `CODEOWNERS` file in the specified `outDir`:
 
 **.github/CODEOWNERS**
 
@@ -59,16 +60,41 @@ The CLI will read your configuration and generate a `CODEOWNERS` file in the spe
 ## Matching patterns...
 * @company/team
 # -------------------- END -------------------- #
-
 ```
 
-## Config
+### Using helpers to define config
+
+To ease the configuration, we expose some helpers to give you type inference on the fields you need to define:
+
+```js
+import {
+  defineConfig,
+  defineOwner,
+  defineRule,
+} from '@codeowners-flow/cli/config';
+
+export default defineConfig({
+  outDir: '.github',
+  rules: [
+    defineRule({
+      patterns: ['*'],
+      owners: [
+        defineOwner({
+          name: '@company/team',
+        }),
+      ],
+    }),
+  ],
+});
+```
+
+## Config API
 
 ### outDir
 
 Type: `string`
 
-The relative path where the CODEOWNERS file should be generated.
+The relative path where the `CODEOWNERS`` file should be generated.
 
 ### rules
 
