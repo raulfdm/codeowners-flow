@@ -1,7 +1,7 @@
 import {
   defineConfig,
-  defineRule,
   defineOwner,
+  defineRule,
 } from '@codeowners-flow/cli/config';
 
 const mainTeams = [
