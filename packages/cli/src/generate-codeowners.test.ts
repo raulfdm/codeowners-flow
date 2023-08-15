@@ -46,7 +46,7 @@ describe('fn: generateCodeOwners', () => {
     expect(location).toBe('/root/test/CODEOWNERS');
   });
 
-  it.concurrent('writes CODEOWNERS content', async () => {
+  it('writes CODEOWNERS content', async () => {
     await generateCodeOwners();
 
     const [, content] = mockWriteFileSync.mock.calls[0];
@@ -78,5 +78,10 @@ describe('fn: generateCodeOwners', () => {
         "ownersPath": "/root/test/CODEOWNERS",
       }
     `);
+  });
+
+  it('calls load config with custom config path', async () => {
+    await generateCodeOwners({ config: 'custom/path' });
+    expect(mockLoadConfig).toHaveBeenCalledWith('/root', 'custom/path');
   });
 });
