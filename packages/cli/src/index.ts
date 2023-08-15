@@ -7,6 +7,7 @@ const cli = meow(
   `
   Usage
   $ codeowners-flow generate
+  $ codeowners-flow generate --config /path/to/config.mjs
   $ codeowners-flow init
 
   Example
@@ -17,6 +18,12 @@ const cli = meow(
 `,
   {
     importMeta: import.meta,
+    flags: {
+      config: {
+        type: 'string',
+        shortFlag: 'c',
+      },
+    },
   },
 );
 
@@ -24,7 +31,7 @@ const [command] = cli.input;
 
 switch (command) {
   case 'generate': {
-    generateCodeOwners()
+    generateCodeOwners(cli.flags)
       .then(({ ownersPath }) => {
         console.log('Codeowners file generated! 🎉');
         console.log(`You can find it at: "${ownersPath}".\n`);
