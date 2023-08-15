@@ -1,9 +1,9 @@
 import type { UserConfig } from './config/index.js';
 import { generateCodeOwners } from './generate-codeowners.js';
 
-const mockLoadConfig = vi.fn();
+const mockLoadUserConfig = vi.fn();
 vi.mock('./config/index.js', () => ({
-  loadConfig: (...args: any) => mockLoadConfig(...args),
+  loadUserConfig: (...args: any) => mockLoadUserConfig(...args),
 }));
 
 const mockWriteFileSync = vi.fn();
@@ -20,7 +20,7 @@ vi.mock('@manypkg/find-root', () => ({
 
 describe('fn: generateCodeOwners', () => {
   beforeEach(() => {
-    mockLoadConfig.mockResolvedValue({
+    mockLoadUserConfig.mockResolvedValue({
       outDir: './test',
       rules: [
         {
@@ -46,7 +46,7 @@ describe('fn: generateCodeOwners', () => {
     expect(location).toBe('/root/test/CODEOWNERS');
   });
 
-  it.concurrent('writes CODEOWNERS content', async () => {
+  it('writes CODEOWNERS content', async () => {
     await generateCodeOwners();
 
     const [, content] = mockWriteFileSync.mock.calls[0];
@@ -78,5 +78,10 @@ describe('fn: generateCodeOwners', () => {
         "ownersPath": "/root/test/CODEOWNERS",
       }
     `);
+  });
+
+  it('calls load config with custom config path', async () => {
+    await generateCodeOwners({ config: 'custom/path' });
+    expect(mockLoadUserConfig).toHaveBeenCalledWith('/root', 'custom/path');
   });
 });

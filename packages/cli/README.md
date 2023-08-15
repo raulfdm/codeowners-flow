@@ -16,6 +16,21 @@ To understand the motivations behind this project, refer to the [root repository
 - Node 16 or later
 - pnpm, yarn, or npm
 
+## Usage
+
+```
+Usage
+$ codeowners-flow generate
+$ codeowners-flow generate --config /path/to/config.mjs
+$ codeowners-flow init
+
+Example
+  $ codeowners-flow generate
+
+    CODEOWNERS file generated! 🎉
+    You can find it at: "/path/to/CODEOWNERS".
+```
+
 ## Getting started
 
 The first step is to install `codeowners-flow` in your project:

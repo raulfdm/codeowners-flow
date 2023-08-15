@@ -57,6 +57,7 @@
     "@codeowners-flow/eslint": "workspace:*",
     "@codeowners-flow/tsconfig": "workspace:*",
     "@types/node": "16",
+    "@vitest/coverage-v8": "0.34.1",
     "eslint": "8.47.0",
     "meow": "12.0.1",
     "tsx": "3.12.7",

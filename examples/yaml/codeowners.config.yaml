@@ -1,0 +1,8 @@
+outDir: .github
+rules:
+  - patterns:
+      - '*'
+      - 'docs/**'
+    owners:
+      - name: '@company/core-team'
+      - name: '@company/infra-team'

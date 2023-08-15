@@ -3,17 +3,25 @@ import path from 'node:path';
 
 import { findRoot } from '@manypkg/find-root';
 
-import { loadConfig, type UserConfig } from './config/index.js';
+import { loadUserConfig, type UserConfig } from './config/index.js';
 import { getCodeOwnersContent } from './get-codeowners-content.js';
 
-export async function generateCodeOwners(): Promise<{
+type GenerateCodeOwnersOptions = {
+  config?: string;
+};
+
+export async function generateCodeOwners({
+  config,
+}: GenerateCodeOwnersOptions = {}): Promise<{
   ownersContent: string;
   ownersPath: string;
 }> {
-  const config = await loadConfig();
+  const { rootDir } = await findRoot(process.cwd());
 
-  const ownersContent = getCodeOwnersContent(config);
-  const ownersPath = await getCodeOwnersPath(config);
+  const loadedConfig = await loadUserConfig(rootDir, config);
+
+  const ownersContent = getCodeOwnersContent(loadedConfig);
+  const ownersPath = await getCodeOwnersPath(loadedConfig, rootDir);
 
   writeCodeOwnersFile(ownersPath, ownersContent);
 
@@ -27,7 +35,9 @@ function writeCodeOwnersFile(path: string, content: string): void {
   fs.writeFileSync(path, content, 'utf-8');
 }
 
-async function getCodeOwnersPath(userConfig: UserConfig): Promise<string> {
-  const root = await findRoot(process.cwd());
-  return path.join(root.rootDir, userConfig.outDir, 'CODEOWNERS');
+async function getCodeOwnersPath(
+  userConfig: UserConfig,
+  rootPath: string,
+): Promise<string> {
+  return path.join(rootPath, userConfig.outDir, 'CODEOWNERS');
 }
