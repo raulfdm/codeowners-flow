@@ -14,7 +14,10 @@ import {
 
 const explorer = cosmiconfig('codeowners');
 
-export async function loadConfig(rootDir: string, configRelativePath?: string) {
+export async function loadUserConfig(
+  rootDir: string,
+  configRelativePath?: string,
+) {
   try {
     const result = configRelativePath
       ? await explorer.load(path.resolve(rootDir, configRelativePath))

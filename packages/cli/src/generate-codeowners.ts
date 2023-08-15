@@ -3,7 +3,7 @@ import path from 'node:path';
 
 import { findRoot } from '@manypkg/find-root';
 
-import { loadConfig, type UserConfig } from './config/index.js';
+import { loadUserConfig, type UserConfig } from './config/index.js';
 import { getCodeOwnersContent } from './get-codeowners-content.js';
 
 type GenerateCodeOwnersOptions = {
@@ -18,7 +18,7 @@ export async function generateCodeOwners({
 }> {
   const { rootDir } = await findRoot(process.cwd());
 
-  const loadedConfig = await loadConfig(rootDir, config);
+  const loadedConfig = await loadUserConfig(rootDir, config);
 
   const ownersContent = getCodeOwnersContent(loadedConfig);
   const ownersPath = await getCodeOwnersPath(loadedConfig, rootDir);

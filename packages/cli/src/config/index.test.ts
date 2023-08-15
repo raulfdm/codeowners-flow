@@ -1,4 +1,4 @@
-import { loadConfig, type UserConfig } from './index.js';
+import { loadUserConfig, type UserConfig } from './index.js';
 
 const mockConfig: UserConfig = {
   outDir: 'outDir',
@@ -27,21 +27,21 @@ vi.mock('cosmiconfig', () => ({
   },
 }));
 
-describe('fn: loadConfig', () => {
+describe('fn: loadUserConfig', () => {
   it('searches for config if no configRelativePath is sent', async () => {
-    await loadConfig('rootDir');
+    await loadUserConfig('rootDir');
     expect(mockExplorerSearch).toHaveBeenCalled();
   });
 
   it('loads the config sent', () => {
-    loadConfig('rootDir', 'configRelativePath');
+    loadUserConfig('rootDir', 'configRelativePath');
     expect(mockExploderLoad).toHaveBeenCalledWith(
       expect.stringContaining('configRelativePath'),
     );
   });
 
   it('returns the parsed configuration', async () => {
-    const config = await loadConfig('rootDir', 'configRelativePath');
+    const config = await loadUserConfig('rootDir', 'configRelativePath');
     expect(config).toEqual(mockConfig);
   });
 
@@ -54,7 +54,7 @@ describe('fn: loadConfig', () => {
       mockExplorerSearch.mockResolvedValue({ config: customConfig });
 
       try {
-        await loadConfig('rootDir');
+        await loadUserConfig('rootDir');
       } catch (error) {
         expect((error as Error).message).toMatchInlineSnapshot(
           '"Validation error: Required at \\"outDir\\""',
@@ -68,7 +68,7 @@ describe('fn: loadConfig', () => {
       );
 
       try {
-        await loadConfig('rootDir', 'configRelativePath');
+        await loadUserConfig('rootDir', 'configRelativePath');
       } catch (error) {
         expect((error as Error).message).toMatchInlineSnapshot(
           '"Config file not found. Please ensure to point a valid config file path or create a new one with the init command."',
