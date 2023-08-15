@@ -4,7 +4,7 @@ const OwnerSchema = z.object({
   name: z.string(),
 });
 
-type Owner = z.infer<typeof OwnerSchema>;
+export type Owner = z.infer<typeof OwnerSchema>;
 
 export function defineOwner(owner: Owner) {
   return owner;
@@ -17,7 +17,7 @@ const RuleSchema = z.object({
   comments: z.array(z.string()).optional(),
 });
 
-type Rule = z.infer<typeof RuleSchema>;
+export type Rule = z.infer<typeof RuleSchema>;
 
 export function defineRule(rule: Rule) {
   return rule;
@@ -26,6 +26,7 @@ export function defineRule(rule: Rule) {
 export const UserConfigSchema = z.object({
   outDir: z.string(),
   rules: z.array(RuleSchema),
+  _meta: z.record(z.string(), z.unknown()).optional().default({}),
 });
 
 export type UserConfig = z.infer<typeof UserConfigSchema>;
