@@ -1,5 +1,7 @@
+import path from 'node:path';
+
 import { cosmiconfig } from 'cosmiconfig';
-import type { ZodError } from 'zod';
+import { ZodError } from 'zod';
 import { fromZodError } from 'zod-validation-error';
 
 import {
@@ -12,21 +14,32 @@ import {
 
 const explorer = cosmiconfig('codeowners');
 
-export async function loadConfig() {
-  const config = await explorer.search();
-
+export async function loadConfig(rootDir: string, configRelativePath?: string) {
   try {
-    return UserConfigSchema.parse(config?.config ?? {});
+    const result = configRelativePath
+      ? await explorer.load(path.resolve(rootDir, configRelativePath))
+      : await explorer.search();
+
+    return UserConfigSchema.parse(result?.config ?? {});
   } catch (error: unknown) {
-    const validationError = fromZodError(error as ZodError);
-    // the error now is readable by the user
-    // you may print it to console
-    // or return it via an API
-    console.error(validationError.message);
-    console.log('\n');
-    process.exit(1);
+    let message = 'An unexpected error occurred.';
+
+    if (error instanceof ZodError) {
+      const validationError = fromZodError(error as ZodError);
+      message = validationError.message;
+    } else if (error instanceof Error) {
+      if (error.message.includes('no such file or directory')) {
+        message =
+          'Config file not found. Please ensure to point a valid config file path or create a new one with the init command.';
+      } else {
+        message = error.message;
+      }
+    }
+
+    throw new Error(message);
   }
 }
 
 export type { UserConfig };
+
 export { defineConfig, defineOwner, defineRule };
