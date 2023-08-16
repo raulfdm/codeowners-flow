@@ -1,5 +1,11 @@
 # @codeowners-flow/cli
 
+## 0.1.1
+
+### Patch Changes
+
+- ed1a92e: move `meow` to dependency instead devDependency
+
 ## 0.1.0
 
 ### Minor Changes
