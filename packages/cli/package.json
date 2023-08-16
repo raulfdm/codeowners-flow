@@ -1,6 +1,6 @@
 {
   "name": "@codeowners-flow/cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A tool to script and manage the CODEOWNERS file programmatically",
   "bin": {
     "codeowners-flow": "./bin/index.js"
