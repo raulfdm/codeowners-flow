@@ -40,8 +40,8 @@
     }
   },
   "scripts": {
-    "prepare": "pnpm turbo build --filter @codeowners-flow/cli --output-logs errors-only",
-    "prepack": "pnpm turbo build --filter @codeowners-flow/cli --output-logs errors-only",
+    "prepare": "turbo build --filter @codeowners-flow/cli --output-logs errors-only",
+    "prepack": "turbo build --filter @codeowners-flow/cli --output-logs errors-only",
     "build": "vite build",
     "dev": "tsx src/index.ts",
     "lint": "eslint src",
