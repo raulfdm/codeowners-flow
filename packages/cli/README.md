@@ -13,7 +13,7 @@ To understand the motivations behind this project, refer to the [root repository
 
 ## Prerequisite
 
-- Node 16 or later
+- Node 22 or later
 - pnpm, yarn, or npm
 
 ## Usage
