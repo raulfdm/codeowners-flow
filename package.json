@@ -19,14 +19,14 @@
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
-    "@changesets/cli": "2.26.2",
+    "@changesets/cli": "2.28.1",
+    "@codeowners-flow/cli": "workspace:*",
     "@codeowners-flow/eslint": "workspace:*",
     "@codeowners-flow/tsconfig": "workspace:*",
-    "@codeowners-flow/cli": "workspace:*",
     "eslint": "8.47.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
-    "prettier": "3.0.1",
+    "prettier": "3.5.3",
     "turbo": "2.5.0"
   },
   "packageManager": "pnpm@9.14.2"
