@@ -57,7 +57,7 @@ describe('fn: loadUserConfig', () => {
         await loadUserConfig('rootDir');
       } catch (error) {
         expect((error as Error).message).toMatchInlineSnapshot(
-          '"Validation error: Required at \\"outDir\\""',
+          '"Validation error: Required at "outDir""',
         );
       }
     });
