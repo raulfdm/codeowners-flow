@@ -1,15 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "tasks": {
     "build": {
-      // A package's `build` script depends on that package's
-      // dependencies and devDependencies
-      // `build` tasks  being completed first
-      // (the `^` symbol signifies `upstream`).
-      "dependsOn": ["^build"],
-      // note: output globs are relative to each package's `package.json`
-      // (and not the monorepo root)
-      "outputs": ["dist/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
     },
     "dev": {
       "cache": false,
