@@ -15,7 +15,7 @@
     "lint": "turbo lint",
     "test": "turbo test",
     "typecheck": "turbo typecheck",
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
@@ -24,7 +24,7 @@
     "@codeowners-flow/eslint": "workspace:*",
     "@codeowners-flow/tsconfig": "workspace:*",
     "eslint": "8.47.0",
-    "husky": "8.0.3",
+    "husky": "9.1.7",
     "lint-staged": "13.2.3",
     "prettier": "3.5.3",
     "turbo": "2.5.0"
