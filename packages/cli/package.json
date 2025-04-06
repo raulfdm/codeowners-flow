@@ -29,19 +29,19 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
+      "types": "./index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./index.d.ts"
+      "require": "./dist/index.cjs"
     },
     "./config": {
+      "types": "./config.d.ts",
       "import": "./dist/config.js",
-      "require": "./dist/config.cjs",
-      "types": "./config.d.ts"
+      "require": "./dist/config.cjs"
     }
   },
   "scripts": {
-    "prepare": "pnpm turbo build --filter cli --output-logs errors-only",
-    "prepack": "pnpm turbo build --filter cli --output-logs errors-only",
+    "prepare": "pnpm turbo build --filter @codeowners-flow/cli --output-logs errors-only",
+    "prepack": "pnpm turbo build --filter @codeowners-flow/cli --output-logs errors-only",
     "build": "vite build",
     "dev": "tsx src/index.ts",
     "lint": "eslint src",
@@ -49,23 +49,23 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@manypkg/find-root": "2.2.1",
-    "cosmiconfig": "8.2.0",
-    "meow": "12.0.1",
-    "zod": "3.21.4",
-    "zod-validation-error": "1.3.1"
+    "@manypkg/find-root": "2.2.3",
+    "cosmiconfig": "9.0.0",
+    "meow": "13.2.0",
+    "zod": "3.24.2",
+    "zod-validation-error": "3.4.0"
   },
   "devDependencies": {
     "@codeowners-flow/eslint": "workspace:*",
     "@codeowners-flow/tsconfig": "workspace:*",
-    "@types/node": "16",
-    "@vitest/coverage-v8": "0.34.1",
-    "eslint": "8.47.0",
-    "tsx": "3.12.7",
-    "typescript": "5.1.6",
-    "vite": "4.4.8",
-    "vite-plugin-dts": "3.5.1",
-    "vitest": "0.34.1"
+    "@types/node": "22.14.0",
+    "@vitest/coverage-v8": "3.1.1",
+    "eslint": "9.24.0",
+    "tsx": "4.19.3",
+    "typescript": "5.8.3",
+    "vite": "6.2.5",
+    "vite-plugin-dts": "4.5.3",
+    "vitest": "3.1.1"
   },
   "lint-staged": {
     "*.{md,json}": "prettier --write",

@@ -16,7 +16,7 @@ export default defineConfig({
     }),
   ],
   build: {
-    target: 'node16',
+    target: 'node22',
     rollupOptions: {
       external: function isExternal(id: string) {
         return !id.startsWith('.') && !path.isAbsolute(id);

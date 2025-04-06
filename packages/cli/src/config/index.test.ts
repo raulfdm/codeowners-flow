@@ -33,8 +33,8 @@ describe('fn: loadUserConfig', () => {
     expect(mockExplorerSearch).toHaveBeenCalled();
   });
 
-  it('loads the config sent', () => {
-    loadUserConfig('rootDir', 'configRelativePath');
+  it('loads the config sent', async () => {
+    await loadUserConfig('rootDir', 'configRelativePath');
     expect(mockExploderLoad).toHaveBeenCalledWith(
       expect.stringContaining('configRelativePath'),
     );
@@ -57,7 +57,7 @@ describe('fn: loadUserConfig', () => {
         await loadUserConfig('rootDir');
       } catch (error) {
         expect((error as Error).message).toMatchInlineSnapshot(
-          '"Validation error: Required at \\"outDir\\""',
+          '"Validation error: Required at "outDir""',
         );
       }
     });

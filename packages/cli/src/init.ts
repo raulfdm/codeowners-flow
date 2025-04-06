@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export async function initProject() {
   const content = getConfigTemplate();
 
