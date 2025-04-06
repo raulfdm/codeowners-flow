@@ -1,10 +1,11 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
+  "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
     "skipDefaultLibCheck": true,
     "composite": true,
     "noEmit": true,
     "baseUrl": ".",
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true
   }
 }
