@@ -35,9 +35,9 @@ function writeCodeOwnersFile(path: string, content: string): void {
   fs.writeFileSync(path, content, 'utf-8');
 }
 
-async function getCodeOwnersPath(
+function getCodeOwnersPath(
   userConfig: UserConfig,
   rootPath: string,
 ): Promise<string> {
-  return path.join(rootPath, userConfig.outDir, 'CODEOWNERS');
+  return Promise.resolve(path.join(rootPath, userConfig.outDir, 'CODEOWNERS'));
 }

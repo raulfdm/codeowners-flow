@@ -28,7 +28,7 @@ export async function loadUserConfig(
     let message = 'An unexpected error occurred.';
 
     if (error instanceof ZodError) {
-      const validationError = fromZodError(error as ZodError);
+      const validationError = fromZodError(error);
       message = validationError.message;
     } else if (error instanceof Error) {
       if (error.message.includes('no such file or directory')) {

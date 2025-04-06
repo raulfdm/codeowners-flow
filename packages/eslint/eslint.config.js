@@ -1,15 +1,20 @@
 // @ts-check
 import eslint from '@eslint/js';
-
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import tseslint from 'typescript-eslint';
-
-// /** @type {import('eslint').Linter.Config[]} */
-//
-//
 
 export default tseslint.config(
   eslint.configs.recommended,
-  tseslint.configs.recommended,
+  tseslint.configs.recommendedTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        // @ts-ignore
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
   {
     ignores: [
       'dist/**/*',
@@ -20,6 +25,9 @@ export default tseslint.config(
     ],
   },
   {
+    plugins: {
+      'simple-import-sort': simpleImportSort,
+    },
     files: [
       '**/*.js',
       '**/*.jsx',
@@ -44,6 +52,9 @@ export default tseslint.config(
     files: ['**/*.test.*', '**/*.spec.*'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
     },
   },
 );
