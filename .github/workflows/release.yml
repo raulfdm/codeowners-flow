@@ -15,19 +15,10 @@ jobs:
       - name: Git files setup
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-
-      - name: Node Setup
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: 'pnpm'
+      - uses: oven-sh/setup-bun@v2
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        run: bun install
 
       - name: Create Release Pull Request
         uses: changesets/action@v1.4.10
@@ -35,4 +26,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
-          publish: pnpm publish -r --access public
+          publish: bun publish -r --access public

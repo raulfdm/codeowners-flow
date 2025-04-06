@@ -40,8 +40,8 @@
     }
   },
   "scripts": {
-    "prepare": "pnpm turbo build --filter @codeowners-flow/cli --output-logs errors-only",
-    "prepack": "pnpm turbo build --filter @codeowners-flow/cli --output-logs errors-only",
+    "prepare": "turbo build --filter @codeowners-flow/cli --output-logs errors-only",
+    "prepack": "turbo build --filter @codeowners-flow/cli --output-logs errors-only",
     "build": "vite build",
     "dev": "tsx src/index.ts",
     "lint": "eslint src",
@@ -60,6 +60,7 @@
     "@codeowners-flow/tsconfig": "workspace:*",
     "@types/node": "22.14.0",
     "@vitest/coverage-v8": "3.1.1",
+    "ajv": "8.17.1",
     "eslint": "9.24.0",
     "tsx": "4.19.3",
     "typescript": "5.8.3",
