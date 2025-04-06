@@ -1,13 +1,15 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
-import tsParser from '@typescript-eslint/parser';
+// @ts-check
+import eslint from '@eslint/js';
 
-const compat = new FlatCompat({
-  recommendedConfig: js.configs.recommended,
-});
+import tseslint from 'typescript-eslint';
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-export default [
+// /** @type {import('eslint').Linter.Config[]} */
+//
+//
+
+export default tseslint.config(
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
   {
     ignores: [
       'dist/**/*',
@@ -17,8 +19,6 @@ export default [
       '**/*.d.ts',
     ],
   },
-  ...compat.extends('plugin:@typescript-eslint/recommended'),
-  ...compat.plugins('@typescript-eslint', 'simple-import-sort'),
   {
     files: [
       '**/*.js',
@@ -35,12 +35,6 @@ export default [
   },
   {
     files: ['**/*.ts'],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        project: 'tsconfig.json',
-      },
-    },
     rules: {
       '@typescript-eslint/consistent-type-exports': 'error',
       '@typescript-eslint/consistent-type-imports': 'error',
@@ -52,4 +46,4 @@ export default [
       '@typescript-eslint/no-explicit-any': 'off',
     },
   },
-];
+);

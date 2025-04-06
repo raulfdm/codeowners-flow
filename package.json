@@ -23,7 +23,7 @@
     "@codeowners-flow/cli": "workspace:*",
     "@codeowners-flow/eslint": "workspace:*",
     "@codeowners-flow/tsconfig": "workspace:*",
-    "eslint": "8.47.0",
+    "eslint": "9.24.0",
     "husky": "9.1.7",
     "lint-staged": "15.5.0",
     "prettier": "3.5.3",

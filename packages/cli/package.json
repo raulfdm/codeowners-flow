@@ -60,7 +60,7 @@
     "@codeowners-flow/tsconfig": "workspace:*",
     "@types/node": "16",
     "@vitest/coverage-v8": "0.34.1",
-    "eslint": "8.47.0",
+    "eslint": "9.24.0",
     "tsx": "3.12.7",
     "typescript": "5.1.6",
     "vite": "4.4.8",
