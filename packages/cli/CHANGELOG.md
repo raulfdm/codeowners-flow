@@ -1,5 +1,11 @@
 # @codeowners-flow/cli
 
+## 0.3.1
+
+### Patch Changes
+
+- c200113: Remove console logs
+
 ## 0.3.0
 
 ### Minor Changes
