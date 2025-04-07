@@ -24,6 +24,6 @@ jobs:
         uses: changesets/action@v1.4.10
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           publish: bun publish --cwd=packages/cli --access public
