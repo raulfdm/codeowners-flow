@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 
 import { findRoot } from '@manypkg/find-root';
@@ -16,14 +16,19 @@ export async function generateCodeOwners({
   ownersContent: string;
   ownersPath: string;
 }> {
+  const codeOwners = await getCodeOwners(config);
+  await writeCodeOwnersFile(codeOwners.ownersPath, codeOwners.ownersContent);
+
+  return codeOwners;
+}
+
+export async function getCodeOwners(config?: string) {
   const { rootDir } = await findRoot(process.cwd());
 
-  const loadedConfig = await loadUserConfig(rootDir, config);
+  const userConfig = await loadUserConfig(rootDir, config);
 
-  const ownersContent = getCodeOwnersContent(loadedConfig);
-  const ownersPath = await getCodeOwnersPath(loadedConfig, rootDir);
-
-  writeCodeOwnersFile(ownersPath, ownersContent);
+  const ownersContent = getCodeOwnersContent(userConfig);
+  const ownersPath = await getCodeOwnersPath(userConfig, rootDir);
 
   return {
     ownersContent,
@@ -31,8 +36,8 @@ export async function generateCodeOwners({
   };
 }
 
-function writeCodeOwnersFile(path: string, content: string): void {
-  fs.writeFileSync(path, content, 'utf-8');
+function writeCodeOwnersFile(path: string, content: string): Promise<void> {
+  return fs.writeFile(path, content, 'utf-8');
 }
 
 function getCodeOwnersPath(

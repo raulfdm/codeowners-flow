@@ -16,18 +16,19 @@ export async function initProject() {
 }
 
 function getConfigTemplate() {
-  return `/** @type {import('@codeowners-flow/cli/config').UserConfig} */
-export default {
-  outDir: '.github',
-  rules: [
-    {
-      patterns: ['*'],
-      owners: [
-        {
-          name: '@company-team',
-        },
-      ],
-    },
-  ],
-};`;
+  return `import { defineConfig } from '@codeowners-flow/cli/config';
+
+  export default defineConfig({
+    outDir: '.github',
+    rules: [
+      {
+        patterns: ['*'],
+        owners: [
+          {
+            name: '@company-team',
+          },
+        ],
+      },
+    ],
+  });`;
 }

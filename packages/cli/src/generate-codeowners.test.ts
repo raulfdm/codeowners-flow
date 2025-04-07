@@ -7,9 +7,9 @@ vi.mock('./config/index.js', () => ({
 }));
 
 const mockWriteFileSync = vi.fn();
-vi.mock('node:fs', () => ({
+vi.mock('node:fs/promises', () => ({
   default: {
-    writeFileSync: (...args: any) => mockWriteFileSync(...args),
+    writeFile: (...args: any) => mockWriteFileSync(...args),
   },
 }));
 
@@ -57,8 +57,7 @@ describe('fn: generateCodeOwners', () => {
       # -------------------- START -------------------- #
       ## Matching patterns...
       packages/core/**/* @team/core
-      # -------------------- END -------------------- #
-      "
+      # -------------------- END -------------------- #"
     `);
   });
 
@@ -73,8 +72,7 @@ describe('fn: generateCodeOwners', () => {
       # -------------------- START -------------------- #
       ## Matching patterns...
       packages/core/**/* @team/core
-      # -------------------- END -------------------- #
-      ",
+      # -------------------- END -------------------- #",
         "ownersPath": "/root/test/CODEOWNERS",
       }
     `);

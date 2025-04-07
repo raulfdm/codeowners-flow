@@ -2,14 +2,6 @@
 # Instead, modify the `codeowners.config.mjs` file located at the root of your project.
 
 # -------------------- START -------------------- #
-# Everything else will be fallback to @company/core-team to approve
 ## Matching patterns...
-* @company/core-team @company/infra-team
-# -------------------- END -------------------- #
-
-# -------------------- START -------------------- #
-## Matching patterns...
-apps/website-frontend @company/website-team @company/core-team @company/infra-team
-## Except...
-apps/website-frontend/github
+* @company-team
 # -------------------- END -------------------- #
