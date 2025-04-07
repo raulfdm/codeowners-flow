@@ -2,12 +2,14 @@ import meow from 'meow';
 
 import { generateCodeOwners } from './generate-codeowners.js';
 import { initProject } from './init.js';
+import { validateCodeowners } from './validate-codeowners.ts';
 
 const cli = meow(
   `
   Usage
   $ codeowners-flow generate
   $ codeowners-flow generate --config /path/to/config.mjs
+  $ codeowners-flow validate
   $ codeowners-flow init
 
   Example
@@ -30,6 +32,10 @@ const cli = meow(
 const [command] = cli.input;
 
 switch (command) {
+  case 'validate': {
+    validateCodeowners(cli.flags).then(console.log).catch(console.error);
+    break;
+  }
   case 'generate': {
     generateCodeOwners(cli.flags)
       .then(({ ownersPath }) => {
