@@ -12,7 +12,6 @@ export async function validateCodeowners({
   config,
 }: ValidateCodeOwnersOptions = {}) {
   const { ownersPath, ownersContent } = await getCodeOwners(config);
-  console.log(ownersContent);
   try {
     const file = await fs.readFile(ownersPath);
     const content = file.toString();
