@@ -18,7 +18,6 @@ export async function loadUserConfig(
   rootDir: string,
   configRelativePath?: string,
 ) {
-  console.log('configRelativePath', configRelativePath);
   try {
     const result = configRelativePath
       ? await explorer.load(path.resolve(rootDir, configRelativePath))
