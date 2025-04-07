@@ -40,8 +40,8 @@
     }
   },
   "scripts": {
-    "prepare": "turbo build --filter @codeowners-flow/cli --output-logs errors-only",
-    "prepack": "turbo build --filter @codeowners-flow/cli --output-logs errors-only",
+    "prepare": "bun turbo build --filter @codeowners-flow/cli --output-logs errors-only",
+    "prepack": "bun turbo build --filter @codeowners-flow/cli --output-logs errors-only",
     "build": "vite build",
     "dev": "bun src/index.ts",
     "lint": "eslint src",
