@@ -1,5 +1,16 @@
 # @codeowners-flow/cli
 
+## 0.3.0
+
+### Minor Changes
+
+- 819e1aa: Enhance string formatting while generating CODEOWNERS
+- 819e1aa: Add new "validate" command.
+
+  With `codeowners-flow validate`, you can validate your CODEOWNERS file against a set of rules and ensure that it meets the required format and structure.
+
+- 819e1aa: Fix init boilerplate to import "defineConfig" from CLI
+
 ## 0.2.0
 
 ### Minor Changes
