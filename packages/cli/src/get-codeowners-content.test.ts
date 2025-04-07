@@ -24,8 +24,7 @@ describe('getCodeOwnersContent', () => {
       # -------------------- START -------------------- #
       ## Matching patterns...
       packages/core/**/* @team/core
-      # -------------------- END -------------------- #
-      "
+      # -------------------- END -------------------- #"
     `);
   });
 
@@ -57,8 +56,7 @@ describe('getCodeOwnersContent', () => {
       packages/core @team/core
       pnpm-workspace.yaml @team/core
       .github/workflows @team/core
-      # -------------------- END -------------------- #
-      "
+      # -------------------- END -------------------- #"
     `);
   });
 
@@ -87,8 +85,7 @@ describe('getCodeOwnersContent', () => {
       # This is another comment
       ## Matching patterns...
       packages/core/**/* @team/core
-      # -------------------- END -------------------- #
-      "
+      # -------------------- END -------------------- #"
     `);
   });
 
@@ -117,8 +114,7 @@ describe('getCodeOwnersContent', () => {
       packages/core/**/* @team/core
       ## Except...
       packages/core/**/test
-      # -------------------- END -------------------- #
-      "
+      # -------------------- END -------------------- #"
     `);
   });
 
@@ -148,8 +144,7 @@ describe('getCodeOwnersContent', () => {
       ## Except...
       packages/core/**/test
       packages/core/**/mock
-      # -------------------- END -------------------- #
-      "
+      # -------------------- END -------------------- #"
     `);
   });
 });
