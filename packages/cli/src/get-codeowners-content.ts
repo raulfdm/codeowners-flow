@@ -1,3 +1,5 @@
+import dedent from 'dedent';
+
 import type { UserConfig } from './config/index.js';
 
 export function getCodeOwnersContent(userConfig: UserConfig) {
@@ -34,7 +36,7 @@ export function getCodeOwnersContent(userConfig: UserConfig) {
     content.push(...partialConfig);
   }
 
-  return content.join('\n');
+  return dedent(content.join('\n'));
 }
 
 function getSectionDivider(heading: string): string {

@@ -51,6 +51,7 @@
   "dependencies": {
     "@manypkg/find-root": "2.2.3",
     "cosmiconfig": "9.0.0",
+    "dedent": "1.5.3",
     "meow": "13.2.0",
     "zod": "3.24.2",
     "zod-validation-error": "3.4.0"
